@@ -5,7 +5,7 @@ int main() {
     int x;
     cin>>x;
     for (int y = 0;y<x;y++){
-        for (int space = 1;space<=y;space++){
+        for (int space = 0;space<=y;space++){
             cout<<" ";
         }
         for (int star = y;star<x;star++){
