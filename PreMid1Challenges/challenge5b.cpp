@@ -1,15 +1,12 @@
 #include <iostream>
 using namespace std;
 int main(){
-    int h,l;
+    int h;
     cout<<"height of isolosis triangle: ";
     cin>>h;
-    cout<<"length of isolosis triangle: ";
-    cin>>l;
-    int center = l/2 + 1;
-    for(int z = 1;z<=h;z++){
-            for (int x = 1; x<=l;x++){
-                if((x<center+z)&&(x>center-z)){
+    for(int row = 1;row<=h;row++){
+            for (int col = 1; col<=(h*2)-1;col++){
+                if((col<h+row)&&(col>h-row)){
                     cout<<"*";
                 }
                 else{
