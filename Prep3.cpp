@@ -11,7 +11,7 @@ int main(){
     }
     return 0;
 }
-
-//  XX    X
-// X  X  X
-//X    XX
+// 123456789
+//1  XX    X
+//2 X  X  X
+//3X    XX
