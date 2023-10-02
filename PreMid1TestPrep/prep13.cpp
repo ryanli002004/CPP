@@ -6,11 +6,11 @@ int main(){
     cin>>x;
     for (int row =1; row<=(2*x)-1;row++){
         for (int col = 1; col <= x;col++){
-            if ((col==x-row)||(col==x+row)){
-                cout<<"*";
+            if ((row == col)||((2*x) == row+col)){
+                cout<<" ";
             }
             else{
-                cout<<" ";
+                cout<<"X";
             }
         }
         cout<< endl;
