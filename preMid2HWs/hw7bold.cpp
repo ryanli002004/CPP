@@ -2,9 +2,9 @@
 #include <cstdlib>
 using namespace std;
 
-void populate(int x[][7],int row,int col){
-    for (int r=0; r<row;r++){
-        for (int c=0; c<col;c++){
+void populate(int (&x)[4][7]){
+    for (int r=0; r<4;r++){
+        for (int c=0; c<7;c++){
             x[r][c]=rand()%(70-30+1)+30;//range wasnt provided in the problem so i just assumed it was from 30-70
         }
     }
@@ -34,12 +34,12 @@ string convert(int x){
     }
 }
 
-void average(int x[][7],int row,int col){
+void average(int x[4][7]){
     cout<<"--- Average by Weekday ---"<<endl;
 
-    for (int c=0; c<col;c++){
+    for (int c=0; c<7;c++){
         int counter = 0;
-        for (int r=0; r<row;r++){
+        for (int r=0; r<4;r++){
             counter += x[r][c];
         }
         double average = counter/4.0;
@@ -48,12 +48,12 @@ void average(int x[][7],int row,int col){
     }
 }
 
-void highlow(int x[][7],int row,int col){
-    for (int r=0; r<row;r++){
+void highlow(int x[4][7]){
+    for (int r=0; r<4;r++){
         int counter = 0;
         int lowIndex=0;
         int highIndex=0;
-        for (int c=0; c<col;c++){
+        for (int c=0; c<7;c++){
             if (x[r][c] > x[r][highIndex]){
                 highIndex = c;
             }
@@ -71,11 +71,11 @@ void highlow(int x[][7],int row,int col){
     }
 }
 
-void display(int x[][7],int row,int col){
+void display(int x[4][7]){
     cout<<"Temperature Data in Fahrenheit:"<<endl;
-    for (int r=0; r<row;r++){
+    for (int r=0; r<4;r++){
         cout<<"Week "<<r+1<<": ";
-        for (int c=0; c<col;c++){
+        for (int c=0; c<7;c++){
             cout<<x[r][c]<<" ";
         }
         cout<<endl;
@@ -84,9 +84,9 @@ void display(int x[][7],int row,int col){
 
 int main(){
     int arr[4][7];
-    populate(arr,4,7);
-    display(arr,4,7);
-    highlow(arr,4,7);
-    average(arr,4,7);
+    populate(arr);
+    display(arr);
+    highlow(arr);
+    average(arr);
     return 0;
 }
